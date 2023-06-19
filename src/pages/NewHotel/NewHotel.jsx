@@ -5,11 +5,8 @@ import { useState } from 'react';
 import './NewHotel.scss';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-const NewHotel = ({ inputs, title }) => {
+const NewHotel = ({ title }) => {
 	const navigate = useNavigate();
-	const [info, setInfo] = useState({});
-	const [files, setFiles] = useState('');
-	const [rooms, setRooms] = useState([]);
 
 	const initialValues = {
 		title: '',

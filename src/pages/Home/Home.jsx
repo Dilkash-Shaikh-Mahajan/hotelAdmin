@@ -1,30 +1,26 @@
-import {
-	Sidebar,
-	Navbar,
-	Widget,
-	Featured,
-	Chart,
-	TableList,
-} from '../../components';
-import './Home.scss';
+import React, { useEffect, useState } from 'react';
+import { Booking, Footer, Gallary, HomeHeader } from '../../components';
+import axios from 'axios';
 
-// this component call from ==> 🟨 ../App.js 🟨 React <Router />
 const Home = () => {
+	const backend_URL = `http://localhost:5000/api/getAllHotel`;
+	const [apiData, setApiData] = useState([]);
+	useEffect(() => {
+		getAllHotel();
+	}, []);
+	const getAllHotel = async () => {
+		const { data } = await axios.get(backend_URL);
+		console.log('apiData', data);
+		setApiData(data.data);
+	};
+
 	return (
-		<div className='home'>
-			<Sidebar />
-
-			<div className='homContainer'>
-				<Navbar />
-
-				<div className='widgets'>
-					<Widget type='user' />
-					<Widget type='order' />
-					<Widget type='earning' />
-					<Widget type='balance' />
-				</div>
-			</div>
-		</div>
+		<>
+			<HomeHeader />
+			<Gallary />
+			<Booking apiData={apiData} />
+			<Footer />
+		</>
 	);
 };
 

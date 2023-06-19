@@ -5,3 +5,8 @@ export { default as Sidebar } from './Sidebar/Sidebar';
 export { default as Navbar } from './Navbar/Navbar';
 export { default as Widget } from './Widget/Widget';
 export { default as Chart } from './Chart/Chart';
+export { default as HomeHeader } from './HomeHeader/HomeHeader';
+export { default as Gallary } from './HomeHeader/Gallary';
+export { default as Booking } from './HomeHeader/Booking';
+export { default as Footer } from './HomeHeader/Footer';
+export { default as BookRoomDetail } from './BookRoom/Details';

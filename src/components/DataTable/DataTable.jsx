@@ -35,7 +35,7 @@ const DataTable = ({ columns }) => {
 			renderCell: (params) => {
 				return (
 					<div className='cellAction'>
-						<Link to={`/users/${params.row._id}`}>
+						<Link to={`/hotels/edit/${params.row._id}`}>
 							<div className='viewButton'>Edit</div>
 						</Link>
 

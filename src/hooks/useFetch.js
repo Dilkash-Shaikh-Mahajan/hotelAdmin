@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 // Backend || Server ==> URL Address
-const api = axios.create({ baseURL: 'http://localhost:5000/api' });
+export const api = axios.create({ baseURL: 'http://localhost:5000/api' });
 
 // this File call from ==>
 // 1) ../pages/Login 🟨 <Components />
@@ -12,7 +12,7 @@ const api = axios.create({ baseURL: 'http://localhost:5000/api' });
 // 4) ../pages/NewHotel 🟨 <Components />
 // 5) ../components/DataTable 🟨 <Components />
 
-const useFetch = (endPoint) => {
+export const useFetch = (endPoint) => {
 	const [data, setData] = useState([]);
 	const [error, setError] = useState(false);
 	const [loading, setLoading] = useState(false);
@@ -68,8 +68,16 @@ export const creatingNewHotel = (newHotel) =>
 			'Content-Type': 'multipart/form-data',
 		},
 	});
+export const updateNewHotel = (newHotel, id) =>
+	api.put(`/updateHotel/${id}`, newHotel, {
+		headers: {
+			'Content-Type': 'multipart/form-data',
+		},
+	});
 export const creatingNewRoom = (hotelId, totalRoomInfo) =>
 	api.post(`/rooms/${hotelId}`, totalRoomInfo);
 
+export const createOrder = (data) => api.post(`/createOrder`, data);
+export const bookOneRoom = (data) => api.post(`/createBookingHotel`, data);
 const imageHostingUrl = 'https://api.cloudinary.com/v1_1/taiseen/image/upload';
 export const imageUpload = (imgFile) => axios.post(imageHostingUrl, imgFile);

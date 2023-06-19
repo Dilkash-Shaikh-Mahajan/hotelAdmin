@@ -3,9 +3,19 @@ import {
 	roomColumns,
 	userColumns,
 } from './constants/dataTableSource';
-import { Home, List, Login, NewUser, NewHotel, Single } from './pages';
-import { hotelInputs, roomInputs, userInputs } from './constants/formSource';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import {
+	UserDashboard,
+	Home,
+	List,
+	Login,
+	NewUser,
+	NewHotel,
+	Single,
+	EditHotel,
+	BookRoom,
+} from './pages';
+import { userInputs } from './constants/formSource';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useDarkModeContext } from './context/DarkModeContext';
 import { useAuthContext } from './context/AuthContext';
 import './style/dark.scss';
@@ -37,8 +47,16 @@ const App = () => {
 								</ProtectedRoute>
 							}
 						/>
-						<Route path='login' element={<Login />} />
 
+						<Route path='login' element={<Login />} />
+						<Route
+							path='userDashboard'
+							element={<UserDashboard />}
+						/>
+						<Route
+							path='bookRoom'
+							element={<BookRoom />}
+						/>
 						<Route path='users'>
 							<Route
 								index
@@ -105,6 +123,15 @@ const App = () => {
 								element={
 									<ProtectedRoute>
 										<NewHotel title='Add New Hotel' />
+									</ProtectedRoute>
+								}
+							/>
+
+							<Route
+								path='edit/:id'
+								element={
+									<ProtectedRoute>
+										<EditHotel title='Edit Hotel' />
 									</ProtectedRoute>
 								}
 							/>

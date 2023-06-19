@@ -1,6 +1,10 @@
 export { default as NewHotel } from './NewHotel/NewHotel';
+export { default as EditHotel } from './EditHotel/EditHotel';
 export { default as NewUser } from './NewUser/NewUser';
 export { default as Single } from './Single/Single';
 export { default as Login } from './Login/Login';
 export { default as List } from './List/List';
+export { default as UserDashboard } from './UserDashboard/Home';
 export { default as Home } from './Home/Home';
+export { default as BookRoom } from './BookRoom/BookRoom';
+export { default as HeaderCarousel } from './BookRoom/HeaderCarousel';
