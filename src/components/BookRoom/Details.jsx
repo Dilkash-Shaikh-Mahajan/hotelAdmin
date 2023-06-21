@@ -28,7 +28,7 @@ const Details = ({ apiData }) => {
 			reqData.append('amount', 1500);
 			reqData.append('currency', 'INR');
 			const { data } = await axios.put(
-				'http://localhost:5000/api/create-order',
+				'https://hotelmanagementbackend-production.up.railway.app/api/create-order',
 				{
 					amount: apiData.price,
 					currency: 'INR',
@@ -109,6 +109,15 @@ const Details = ({ apiData }) => {
 			console.log(error);
 		}
 	};
+	const handleClick = () => {
+		const targetSection = document.getElementById('targetSection');
+		if (targetSection) {
+			targetSection.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+			});
+		}
+	};
 	const validationSchema = Yup.object({
 		name: Yup.string().required('Name is required'),
 		checkIn: Yup.string().required('Check In Date is required'),
@@ -152,7 +161,11 @@ const Details = ({ apiData }) => {
 										}
 									</div>
 									<div className='book_now_button'>
-										<button variant='primary'>
+										<button
+											variant='primary'
+											onClick={
+												handleClick
+											}>
 											Book Now
 										</button>
 									</div>
@@ -163,6 +176,7 @@ const Details = ({ apiData }) => {
 				</div>
 			</div>
 			<div
+				id='targetSection'
 				className='bookForm'
 				style={{
 					marginTop: '130px',

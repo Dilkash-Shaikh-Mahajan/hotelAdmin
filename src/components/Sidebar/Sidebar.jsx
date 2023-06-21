@@ -39,11 +39,11 @@ const Sidebar = () => {
 					</Link>
 
 					<p className='title'>LISTS</p>
-					<Link to='/users'>
+					<Link to='/bookingRoom'>
 						<li>
 							{' '}
 							<PersonOutlineIcon className='icon' />{' '}
-							<span>Users</span>
+							<span>Booking Room</span>
 						</li>
 					</Link>
 

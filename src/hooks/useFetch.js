@@ -23,7 +23,7 @@ export const useFetch = (endPoint) => {
 			try {
 				const response = await api.get(endPoint);
 				console.log(response);
-				setData(response.data.data);
+				setData(response.data);
 			} catch (error) {
 				setError(error);
 			}
@@ -50,10 +50,10 @@ export const useFetch = (endPoint) => {
 // 🟨 REST api Section...🟨
 // 🟨🟨🟨🟨🟨🟨🟨🟨🟨🟨
 export const userDataTable = (path) => {
-	console.log(path);
 	return useFetch(path);
 };
 export const allHotels = () => useFetch('/getAllHotel');
+export const allHotelsBooking = () => useFetch('/getAllBookingHotel');
 export const allRooms = () => useFetch('/rooms');
 export const getUser = (id) => useFetch('/users/' + id);
 

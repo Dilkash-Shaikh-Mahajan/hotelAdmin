@@ -1,20 +1,21 @@
-import { Sidebar, Navbar, DataTable } from './../../components';
-import './List.scss'
+import { Sidebar, Navbar, DataTable, DataTable2 } from './../../components';
+import './List.scss';
 
+const List = ({ columns, bookHotel }) => {
+	return (
+		<div className='list'>
+			<Sidebar />
 
-const List = ({ columns }) => {
-  
-  return (
-    <div className='list'>
-      <Sidebar />
+			<div className='listContainer'>
+				<Navbar />
+				{bookHotel ? (
+					<DataTable2 />
+				) : (
+					<DataTable columns={columns} />
+				)}
+			</div>
+		</div>
+	);
+};
 
-      <div className="listContainer">
-        <Navbar />
-        <DataTable columns={columns} />
-      </div>
-
-    </div>
-  )
-}
-
-export default List
+export default List;

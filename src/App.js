@@ -57,13 +57,16 @@ const App = () => {
 							path='bookRoom'
 							element={<BookRoom />}
 						/>
-						<Route path='users'>
+						<Route path='bookingRoom'>
 							<Route
 								index
 								element={
 									<ProtectedRoute>
 										{' '}
 										<List
+											bookHotel={
+												true
+											}
 											columns={
 												userColumns
 											}

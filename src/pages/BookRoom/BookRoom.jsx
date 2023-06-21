@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 const BookRoom = () => {
 	const location = useLocation();
 	let BookRoomId = localStorage.getItem('bookRoom');
-	const backend_URL = `http://localhost:5000/api/getHotel/${BookRoomId}`;
+	const backend_URL = `https://hotelmanagementbackend-production.up.railway.app/api/getHotel/${BookRoomId}`;
 	const [apiData, setApiData] = useState([]);
 	useEffect(() => {
 		getAHotel();

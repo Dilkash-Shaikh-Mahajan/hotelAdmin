@@ -1,5 +1,6 @@
 export { default as TableList } from './TableList/TableList';
 export { default as DataTable } from './DataTable/DataTable';
+export { default as DataTable2 } from './DataTable/bookingDataTable';
 export { default as Featured } from './Featured/Featured';
 export { default as Sidebar } from './Sidebar/Sidebar';
 export { default as Navbar } from './Navbar/Navbar';

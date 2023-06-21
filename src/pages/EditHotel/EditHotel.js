@@ -16,7 +16,7 @@ const EditHotel = ({ title }) => {
 	const getEditData = async () => {
 		setLoading(true);
 		const resData = await axios.get(
-			`http://localhost:5000/api/getHotel/${id}`,
+			`https://hotelmanagementbackend-production.up.railway.app/api/getHotel/${id}`,
 		);
 		console.log(resData);
 		setResponseData(resData.data.data);

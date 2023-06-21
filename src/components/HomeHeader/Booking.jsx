@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Booking = () => {
 	const navigate = useNavigate();
-	const backend_URL = `http://localhost:5000/api/getAllHotel`;
+	const backend_URL = `https://hotelmanagementbackend-production.up.railway.app/api/getAllHotel`;
 	const [apiData, setApiData] = useState([]);
 
 	useEffect(() => {
@@ -15,8 +15,8 @@ const Booking = () => {
 	}, []);
 	const getAllHotel = async () => {
 		const { data } = await axios.get(backend_URL);
-		console.log('Data', data);
-		setApiData(data);
+		console.log('DataAll HOtels', data);
+		setApiData(data.data);
 	};
 	const options = {
 		loop: true,
