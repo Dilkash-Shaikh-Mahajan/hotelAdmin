@@ -16,7 +16,7 @@ const Booking = () => {
 	const getAllHotel = async () => {
 		const { data } = await axios.get(backend_URL);
 		console.log('DataAll HOtels', data);
-		setApiData(data.data);
+		setApiData(data);
 	};
 	const options = {
 		loop: true,
