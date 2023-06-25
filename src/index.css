@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.App {
+  font-family: Montserrat;
+  font-weight: 600;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.headerCarousel{
+height: 700px;
+}
+
+.commonPadding{
+    padding: 40px 0;
+}
+.commonPadding .gallery{
+    flex-wrap: wrap;
+}
+.c-w-25{
+    width: 25%;
+}
+.c-h-50{
+    height: 50%;
+}
+@media screen and (max-width: 768px) {
+    .commonPadding{
+        padding: 20px 0;
+    }
+    .headerCarousel{
+        height: 250px;
+        margin-top: 80px;
+    }
+    .c-w-25{
+        width: 50%;
+    }
+    .c-h-50{
+        height: 50%;
+    }
+}

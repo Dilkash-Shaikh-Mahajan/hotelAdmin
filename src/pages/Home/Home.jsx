@@ -9,9 +9,9 @@ const Home = () => {
 		getAllHotel();
 	}, []);
 	const getAllHotel = async () => {
-		const { data } = await axios.get(backend_URL);
-		console.log('apiData', data);
-		setApiData(data.data);
+		const response = await axios.get(backend_URL);
+		console.log('apiData', response.data);
+		setApiData(response.data);
 	};
 
 	return (

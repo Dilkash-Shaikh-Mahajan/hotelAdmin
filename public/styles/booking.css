@@ -745,7 +745,7 @@ input[type=number]::-webkit-outer-spin-button
 	text-align: center;
 	line-height: 36px;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 700;
 	color: #393939;
 }
 .booking_link
@@ -756,6 +756,8 @@ input[type=number]::-webkit-outer-spin-button
 	align-items: center;
 	bottom: 18px;
 	left: 15px;
+	outline: none;
+	border: none;
 	background: #ffa37b;
 	text-align: center;
 	cursor: pointer;
@@ -770,6 +772,8 @@ input[type=number]::-webkit-outer-spin-button
 	height: 65px;
 	line-height: 65px;
 	font-size: 18px;
+	outline: none;
+	border: none;
 	font-weight: 600;
 	color: #ffffff;
 	background-color: transparent;
@@ -791,6 +795,11 @@ input[type=number]::-webkit-outer-spin-button
 {
 	visibility: visible;
 	opacity: 1;
+	border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	-ms-border-radius: 22px;
+	-o-border-radius: 22px;
 }
 .booking_item_content
 {

@@ -1,6 +1,7 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const HomeHeader = () => {
 	const apiData = [
@@ -31,68 +32,13 @@ const HomeHeader = () => {
 	};
 	console.log('ApiDataHeader2', apiData);
 	return (
-		<div>
-			<header className='header bg-black'>
-				<div className='header_content d-flex flex-row align-items-center justify-content-start'>
-					<div className='logo'>
-						<Link to='/'>The River</Link>
-					</div>
-					<div className='ml-auto d-flex flex-row align-items-center justify-content-start'>
-						<nav className='main_nav'>
-							<ul className='d-flex flex-row align-items-start justify-content-start'>
-								<li className='active'>
-									<a href='index.html'>
-										Home
-									</a>
-								</li>
-
-								<li>
-									<Link to='/'>Rooms</Link>
-								</li>
-							</ul>
-						</nav>
-
-						<div className='header_phone d-flex flex-row align-items-center justify-content-center'>
-							<img src='images/phone.png' alt='' />
-							<span>0183-12345678</span>
-						</div>
-
-						<div className='hamburger'>
-							<i
-								className='fa fa-bars'
-								aria-hidden='true'></i>
-						</div>
-					</div>
-				</div>
-			</header>
-
-			<div className='menu trans_400 d-flex flex-column align-items-end justify-content-start'>
-				<div className='menu_close'>
-					<i className='fa fa-times' aria-hidden='true'></i>
-				</div>
-				<div className='menu_content'>
-					<nav className='menu_nav text-right'>
-						<ul>
-							<li>
-								<a href='index.html'>Home</a>
-							</li>
-
-							<li>
-								<Link to='/'>Rooms</Link>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<div className='menu_extra'>
-					<div className='menu_phone d-flex flex-row align-items-center justify-content-center'>
-						<img src='images/phone-2.png' alt='' />
-						<span>+91 9876543210</span>
-					</div>
-				</div>
+		<>
+			<div>
+				<Navbar />
 			</div>
+
 			<OwlCarousel
-				className='owl-main  owl-theme'
-				style={{ height: '700px' }}
+				className='owl-main headerCarousel owl-theme'
 				{...options}>
 				{apiData?.map((image, index) => (
 					<div className='item' key={index}>
@@ -105,7 +51,7 @@ const HomeHeader = () => {
 					</div>
 				))}
 			</OwlCarousel>
-		</div>
+		</>
 	);
 };
 
